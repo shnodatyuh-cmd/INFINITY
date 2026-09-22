@@ -14,20 +14,18 @@
 </head>
 
 <body onload="check()">
-    <nav class="bar">
-        <h2>INFINITY</h2>
-
-
-        <ul>
-            <li><a href="#home">HOME</a></li>
-            <li><a href="#about">ABOUT US</a></li>
-            <li><a href="#explore">EXPLORE</a></li>
-            <li><a href="#contact">CONTACT US</a></li>
-        </ul>
-        <button id="themeToggle" class="ham">🌙</button>
-        <button id="#" onclick="logout()">Log Out</button>
-
-    </nav>
+<nav class="bar">
+    <h2>INFINITY</h2>
+    <ul id="navLinks">
+        <li><a href="#home">HOME</a></li>
+        <li><a href="#about">ABOUT US</a></li>
+        <li><a href="#explore">EXPLORE</a></li>
+        <li><a href="#contact">CONTACT US</a></li>
+    </ul>
+    <button id="themeToggle">🌙</button>
+    <button id="#" onclick="logout()">Log Out</button>
+    <button id="hamburger" class="ham-btn">☰</button>
+</nav>
     <h2 id="viewname" class="head">No User</h2>
     <section id="home" class="mm">
         <div>
@@ -44,7 +42,6 @@
         <div class="isual">
             <div class="cross"></div>
             <div class="hero-badge">Licensed &amp; trusted since day one</div>
-        </div>
         </div>
     </section>
 
@@ -121,11 +118,11 @@
                     <div>🕐 Open daily, 8:00 AM – 12:00 AM</div>
                 </div>
             </div>
-            <form>
+            <form onsubmit="sendToWhatsApp(event)">
                 <input type="text" placeholder="Your name" id="name">
-                <input type="number" placeholder="Your phone" id="email">
+                <input type="tel" placeholder="Your phone" id="email">
                 <textarea placeholder="How can we help?" id="area"></textarea>
-                <button type="submit" class="btnone" onclick="sendToWhatsApp(event)">Send Message</button>
+                <button type="submit" class="btnone">Send Message</button>
             </form>
         </div>
     </section>
@@ -155,6 +152,27 @@
         }
 
         document.getElementById("themeToggle").addEventListener("click", toggleTheme);
+
+        function toggleMenu() {
+            document.getElementById("navLinks").classList.toggle("show");
+        }
+
+        document.getElementById("hamburger").addEventListener("click", toggleMenu);
+
+        function sendToWhatsApp(event) {
+            event.preventDefault();
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let message = document.getElementById("area").value;
+
+            let text = "New Message From " + name + '\n' + "The Phone is: " + email + '\n' + "The Message is: " + message;
+
+            let pn = "201211196313";
+
+            let url = "https://wa.me/" + pn + "?text=" + encodeURIComponent(text);
+
+            window.open(url, "_blank");
+        }
     </script>
 </body>
 
