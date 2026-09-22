@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INFINITY</title>
+    <link rel="stylesheet" href="wb.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body onload="check()">
+    <nav class="bar">
+        <h2>INFINITY</h2>
+
+
+        <ul>
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#about">ABOUT US</a></li>
+            <li><a href="#explore">EXPLORE</a></li>
+            <li><a href="#contact">CONTACT US</a></li>
+        </ul>
+        <button id="themeToggle" class="ham">🌙</button>
+        <button id="#" onclick="logout()">Log Out</button>
+
+    </nav>
+    <h2 id="viewname" class="head">No User</h2>
+    <section id="home" class="mm">
+        <div>
+            <h1>Care that fits your everyday life.</h1>
+            <p>From prescriptions to everyday essentials, INFINITY brings trusted pharmacy care closer to you — fast,
+                reliable, and always in stock.</p>
+
+            <div class="actions">
+                <a href="" class="btnone">Browse Products</a>
+                <a href="" class="btntwo">Our Story</a>
+            </div>
+
+        </div>
+        <div class="isual">
+            <div class="cross"></div>
+            <div class="hero-badge">Licensed &amp; trusted since day one</div>
+        </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div>
+            <div class="section-label">About Us</div>
+            <h2 class="uu">Built around the people we serve.</h2>
+        </div>
+        <div class="about-copy">
+            <p>INFINITY started with a simple idea: pharmacy care shouldn't feel transactional. Every prescription,
+                every question, every visit is handled by people who take your health seriously.</p>
+            <p>Today we combine a real neighborhood pharmacy with the convenience of ordering online — so you get expert
+                advice and your essentials, without the wait.</p>
+            <div class="about-stats">
+                <div>
+                    <div class="stat-num">12+</div>
+                    <div class="stat-label">Years of service</div>
+                </div>
+                <div>
+                    <div class="stat-num">30k</div>
+                    <div class="stat-label">Customers served</div>
+                </div>
+                <div>
+                    <div class="stat-num">24/7</div>
+                    <div class="stat-label">Support line</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="explore" id="explore">
+        <div class="explore-head">
+            <h2>Everything your health routine needs, in one place.</h2>
+            <p>Browse our most-requested categories, or search for anything you need directly.</p>
+        </div>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="dot"></div>
+                <h3>Prescription Medicine </h3>
+                <p>Upload your prescription and we'll prepare it for pickup or delivery</p>
+            </div>
+
+            <div class="product-card">
+                <div class="dot"></div>
+                <h3>Vitamins & Supplements</h3>
+                <p>Trusted brands to support your daily wellness routine.</p>
+            </div>
+
+            <div class="product-card">
+                <div class="dot"></div>
+                <h3>Skin & Personal Care </h3>
+                <p>Dermatologist-recommended products for everyday care.</p>
+            </div>
+
+            <div class="product-card">
+                <div class="dot"></div>
+                <h3>Baby & Mother Care </h3>
+                <p>Everything you need for a healthy start, in every stage.</p>
+            </div>
+        </div>
+
+
+    </section>
+
+
+    <section class="contact" id="contact">
+        <div class="contact-inner">
+            <div>
+                <div class="section-label">Contact Us</div>
+                <h2>Reach out anytime — we're here to help.</h2>
+                <div class="contact-info">
+                    <div>📍 123 Main Street, Cairo, Egypt</div>
+                    <div>📞 +20 100 000 0000</div>
+                    <div>🕐 Open daily, 8:00 AM – 12:00 AM</div>
+                </div>
+            </div>
+            <form>
+                <input type="text" placeholder="Your name" id="name">
+                <input type="number" placeholder="Your phone" id="email">
+                <textarea placeholder="How can we help?" id="area"></textarea>
+                <button type="submit" class="btnone" onclick="sendToWhatsApp(event)">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        function check() {
+            let name = localStorage.getItem("play");
+            if (name) {
+                document.getElementById("viewname").innerText = "Welcome Back " + name;
+            }
+        }
+
+        function logout() {
+            localStorage.removeItem("play");
+            window.location = "index.html";
+        }
+
+        function toggleTheme() {
+            let html = document.documentElement;
+            let current = html.getAttribute("data-theme");
+
+            if (current === "dark") {
+                html.setAttribute("data-theme", "light");
+            } else {
+                html.setAttribute("data-theme", "dark");
+            }
+        }
+
+        document.getElementById("themeToggle").addEventListener("click", toggleTheme);
+    </script>
+</body>
+
+</html>

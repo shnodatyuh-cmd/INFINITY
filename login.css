@@ -1,0 +1,79 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(181, 208, 233);
+  font-family: 'Inter', Arial, sans-serif;
+}
+
+.ele {
+  width: 320px;
+  padding: 30px;
+  background-color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+}
+
+.ele h2 {
+  text-align: center;
+  font-weight: 700;
+  color: green;
+}
+
+.ele h3 {
+  text-align: center;
+  color: green;
+  margin-bottom: 20px;
+}
+
+.ele form {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.ele label {
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.ele input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #aaa;
+  border-radius: 10px;
+  font-family: inherit;
+  transition: 0.3s all ease;
+}
+
+.ele input:focus {
+  outline: none;
+  border-color: green;
+  box-shadow: 0 0 6px rgba(0, 128, 0, 0.35);
+}
+
+.ele button {
+  padding: 7px;
+  margin-top: 5px;
+  font-weight: bold;
+  font-family: inherit;
+  color: white;
+  background-color: rgb(255, 175, 3);
+  border: 3px solid rgb(255, 175, 3);
+  transition: 0.3s all ease;
+  border-radius: 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.ele button:hover {
+  border-color: black;
+  transform: scale(1.05);
+}
