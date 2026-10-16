@@ -5,7 +5,5 @@ function getuserdetails() {
     if (pass) {
         localStorage.setItem("play", name);
         window.location = "wb.html";
-    } else {
-        alert("error");
-    }
+    } 
 }
